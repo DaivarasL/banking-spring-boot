@@ -11,5 +11,10 @@ public class BankingSpringBootApplication {
         SpringApplication.run(BankingSpringBootApplication.class, args);
     }
 
+    // 2DO:
+    // - Logs
+    // - Unit tests
+    // - Added functionality
+    // - Login system?
 
 }
