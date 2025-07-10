@@ -15,6 +15,6 @@ public class BankingSpringBootApplication {
     // - Logs
     // - Unit tests
     // - Added functionality
-    // - Login system?
+    // - Login system
 
 }

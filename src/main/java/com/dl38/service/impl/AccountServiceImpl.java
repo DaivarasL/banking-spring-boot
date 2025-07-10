@@ -7,12 +7,14 @@ import com.dl38.exception.InsufficientFundsException;
 import com.dl38.mapper.AccountMapper;
 import com.dl38.repository.AccountRepository;
 import com.dl38.service.AccountService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class AccountServiceImpl implements AccountService {
     private AccountRepository accountRepository;
 
@@ -32,10 +34,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDto getAccountById(Long id) {
+        log.info("Get Account by id {}", id);
         Account account = accountRepository
                 .findById(id)
                 .orElseThrow(() -> new AccountNotFoundException("Account not found"));
 
+        log.info("Account by id was found{}", id);
         return AccountMapper.mapToAccountDto(account);
     }
 
